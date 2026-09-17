@@ -71,7 +71,7 @@ def initialize_security_data(database_url: str) -> None:
         engine.dispose()
 
 
-def create_user(database_url: str, username: str, password: str, email: str = "", full_name: str = "", is_superadmin: bool = False, role_ids: list[int] | None = None) -> tuple[bool, str]:
+def create_user(database_url: str, username: str, password: str, email: str = "", full_name: str = "", is_superadmin: bool = False, role_ids: list[int] | None = None, is_active: bool = True) -> tuple[bool, str]:
     username = username.strip()
     email = email.strip()
     if len(username) < 3:
